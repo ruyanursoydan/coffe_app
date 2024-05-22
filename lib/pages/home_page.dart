@@ -4,18 +4,17 @@ import '../components/bottom_nav_bar.dart';
 import 'cart_page.dart';
 import 'shop_page.dart';
 
-class HomePage extends StatefulWidget{
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState(); 
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
-  //navigate bottom bar 
-  int _selectedIndex= 0;
-  void navigateBottomBar (int index){
+  //navigate bottom bar
+  int _selectedIndex = 0;
+  void navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -23,12 +22,11 @@ class _HomePageState extends State<HomePage> {
 
   //pages
   final List<Widget> _pages = [
-
     //shop page
-    ShopPage(),
+    const ShopPage(),
 
-    //cart page 
-    CartPage(),
+    //cart page
+    const CartPage(),
   ];
 
   @override
@@ -36,12 +34,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       bottomNavigationBar: MyBottomNavBar(
-        onTabChange: (index) => navigateBottomBar(index) ,
+        onTabChange: (index) => navigateBottomBar(index),
       ),
       body: _pages[_selectedIndex],
     );
   }
-  
 }
-
-

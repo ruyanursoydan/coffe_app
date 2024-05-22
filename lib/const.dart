@@ -1,3 +1,4 @@
 import 'package:flutter/material.dart';
 
-var backgroundColor = Color.fromARGB(255, 83, 57, 57);
+var backgroundColor = Colors.blueGrey[300];
+

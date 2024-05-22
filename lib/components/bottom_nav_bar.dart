@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class MyBottomNavBar extends StatelessWidget {
-  const MyBottomNavBar({super.key, required onTabChange});
+  void Function(int)? onTabChange;
+  MyBottomNavBar({super.key, required this.onTabChange});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(25),
+      margin: const EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(bottom: 12),
       child: GNav(
-        color: Colors.blueGrey[400],
+        onTabChange: (value) => onTabChange!(value),
+        color: Colors.grey[400],
         mainAxisAlignment: MainAxisAlignment.center,
         activeColor: Colors.blueGrey[700],
         tabBackgroundColor: Colors.blueGrey.shade300,
